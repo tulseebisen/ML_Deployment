@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="T1" placeholder="Temperature in kitchen area" required="required" />
+        <input type="text" name="RH_1" placeholder="Humidity in kitchen area" required="required" /></br>
+	<input type="text" name="T2" placeholder="Temperature in living room area" required="required" />
+	<input type="text" name="RH_2" placeholder="Humidity in living room area" required="required" /></br>
+        <input type="text" name="T3" placeholder="Temperature in laundry room area" required="required" />
+	<input type="text" name="RH_3" placeholder="Humidity in laundry room area" required="required" /></br>
+	<input type="text" name="T4" placeholder="Temperature in office room" required="required" />
+    	<input type="text" name="T5" placeholder="Temperature in bathroom" required="required" /></br>
+	<input type="text" name="T6" placeholder="Temperature outside the building" required="required" />
+        <input type="text" name="RH_6" placeholder="Humidity outside the building" required="required" /></br>
+	<input type="text" name="T7" placeholder="Temperature in ironing room" required="required" />
+	<input type="text" name="RH_7" placeholder="Humidity in ironing room" required="required" /></br>
+        <input type="text" name="T8" placeholder="Temperature in teenager room" required="required" />
+	<input type="text" name="RH_8" placeholder="Humidity in teenager room" required="required" /></br>
+	<input type="text" name="RH_9" placeholder="Humidity in parents room" required="required" />
+        <input type="text" name="T_out" placeholder="Temperature outside" required="required" /></br>
+	<input type="text" name="Press_mm_hg" placeholder="Pressure" required="required" />
+	<input type="text" name="RH_out" placeholder="Humidity outside" required="required" /></br>
+        <input type="text" name="Windspeed" placeholder="Wind speed" required="required" />
+	<input type="text" name="hours" placeholder="hours" required="required" /></br>
+	
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
